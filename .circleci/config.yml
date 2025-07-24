@@ -6,7 +6,7 @@ orbs:
 
 executors:
   default:
-    working_directory: /go/src/github.com/timakin/bodyclose
+    working_directory: /go/src/github.com/mc-ikemiryo/bodyclose
     docker:
     - image: circleci/golang:1.12
     environment:
@@ -19,7 +19,7 @@ jobs:
       name: default
     steps:
     - attach_workspace:
-        at: /go/src/github.com/timakin/bodyclose
+        at: /go/src/github.com/mc-ikemiryo/bodyclose
     - run: go test ./...
 
 workflows:
@@ -31,15 +31,15 @@ workflows:
         checkout: true
         vendoring: true
         persist-to-workspace: true
-        workspace-root: /go/src/github.com/timakin/bodyclose
+        workspace-root: /go/src/github.com/mc-ikemiryo/bodyclose
     - test:
         requires:
         - go-module/download
     - golangci-lint/lint:
         checkout: false
         attach-workspace: true
-        workspace-root: /go/src/github.com/timakin/bodyclose
-        working-directory: /go/src/github.com/timakin/bodyclose
+        workspace-root: /go/src/github.com/mc-ikemiryo/bodyclose
+        working-directory: /go/src/github.com/mc-ikemiryo/bodyclose
         requires:
         - go-module/download
         filters:

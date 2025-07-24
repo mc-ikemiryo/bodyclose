@@ -9,7 +9,7 @@
 You can get `bodyclose` by `go get` command.
 
 ```bash
-$ go get -u github.com/timakin/bodyclose
+$ go get -u github.com/mc-ikemiryo/bodyclose
 ```
 
 ## How to use

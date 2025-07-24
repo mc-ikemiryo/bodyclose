@@ -436,8 +436,8 @@ func (r *runner) calledInFunc(f *ssa.Function, called bool) bool {
 }
 
 // isNamedType reports whether t is the named type path.name.
-func isNamedType(t types.Type, path, name string) bool {
-	n, ok := t.(*types.Named)
+func isNamedType(t *types.Alias, path, name string) bool {
+	n, ok := t.Underlying().(*types.Named)
 	if !ok {
 		return false
 	}
